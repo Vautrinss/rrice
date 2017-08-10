@@ -31,13 +31,10 @@ def planttfdb(MSUID):
     # Test existant file
     if(not helper.existFile(pathToFile)):
         # Fetch the file by the url and decompress it
-        r = requests.get(link)
+        r = helper.connectionError(link)
         decompressedFile = gzip.decompress(r.content)
 
         # Create the file .txt
-
-
-
         with open(pathToFile, "wb") as f:
                 f.write(decompressedFile)
                 f.close()

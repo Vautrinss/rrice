@@ -78,7 +78,27 @@ def main():
         dataMsu = msu.msu(id)
         print(dataMsu)
 
-                # Ecriture fichier a revoir !!!!!!!!! pour les id et hashmap[iricname] et hashmpap [raprepname]
+    # Plage chromosome
+    # Cree le fichier fileID.txt
+    elif (db == "11"):
+        snpSeekAll.snpSeekAll("Os12:1..27,531,856")
+        snpSeekAll.snpSeekAll("Os02:1..35,937,250")
+        snpSeekAll.snpSeekAll("Os03:1..36,413,819")
+        snpSeekAll.snpSeekAll("Os04:1..35,502,694")
+        snpSeekAll.snpSeekAll("Os05:1..29,958,434")
+        snpSeekAll.snpSeekAll("Os06:1..31,248,787")
+        snpSeekAll.snpSeekAll("Os07:1..29,697,621")
+        snpSeekAll.snpSeekAll("Os08:1..28,443,022")
+        snpSeekAll.snpSeekAll("Os09:1..23,012,720")
+        snpSeekAll.snpSeekAll("Os10:1..23,207,287")
+        snpSeekAll.snpSeekAll("Os11:1..29,021,106")
+        snpSeekAll.snpSeekAll("Os12:1..27,531,856")
+
+    # Return the SnpSeek Call
+    elif (db == "12"):
+        print(dataSnp)
+
+    # Ecriture fichier geneID (non utilisé pour l'instant)
     elif (db == "13"):
         url = "http://rapdb.dna.affrc.go.jp/download/archive/RAP-MSU_2017-04-14.txt.gz"
         filename = url.split("/")[-1]
@@ -114,57 +134,51 @@ def main():
 
             f.close()
 
-    # Plage chromosome
-    # Cree le fichier fileID.txt
-    elif (db == "11"):
-        snpSeekAll.snpSeekAll("Os12:1..27,531,856")
-        snpSeekAll.snpSeekAll("Os02:1..35,937,250")
-        snpSeekAll.snpSeekAll("Os03:1..36,413,819")
-        snpSeekAll.snpSeekAll("Os04:1..35,502,694")
-        snpSeekAll.snpSeekAll("Os05:1..29,958,434")
-        snpSeekAll.snpSeekAll("Os06:1..31,248,787")
-        snpSeekAll.snpSeekAll("Os07:1..29,697,621")
-        snpSeekAll.snpSeekAll("Os08:1..28,443,022")
-        snpSeekAll.snpSeekAll("Os09:1..23,012,720")
-        snpSeekAll.snpSeekAll("Os10:1..23,207,287")
-        snpSeekAll.snpSeekAll("Os11:1..29,021,106")
-        snpSeekAll.snpSeekAll("Os12:1..27,531,856")
-
-    # Return the SnpSeek Call
-    elif (db == "12"):
-        print(dataSnp)
-
     #test all
     else:
+        print("1")
         dataRapdb = rapdb.rapdb(id)
         print(dataRapdb)
 
+        print("SnpSeek")
         for i in range(0, len(dataSnp)):
             print(dataSnp[i])
 
+        print("2")
         dataGramene = gramene.gramene(id)
         print(dataGramene)
 
+
+        print("3")
         dataOryzabase = oryzabase.oryzabase(id)
         print(dataOryzabase)
 
+
+        print("4")
         ic4r.ic4r(id)
 
+
+        print("5")
         dataPlanttfdb = planttfdb.planttfdb(id)
         print(dataPlanttfdb)
 
+        print("6")
         dataPlntfdb = plntfdb.plntfdb(id)
         print(dataPlntfdb)
 
+        print("7")
         dataFunricegenes = funricegenes.funricegenes(id)
         print(dataFunricegenes)
 
+        print("8")
         dataFunricegenes2 = funricegenes.funricegenes2(id)
         print(dataFunricegenes2)
 
+        print("9")
         dataFunricegenes3 = funricegenes.funricegenes3(id)
         print(dataFunricegenes3)
 
+        print("10")
         dataMsu = msu.msu(id)
         print(dataMsu)
 
