@@ -12,5 +12,5 @@ setup(name='rrice',
           'requests', 'bs4', 'pandas', 'gzip', 'os' ,'json', 'sys', 
 
       ],
-      download_url='https://github.com/Vautrinss/rrice.git'
+      download_url='https://github.com/Vautrinss/rrice.git',
       zip_safe=False)
