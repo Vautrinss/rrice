@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 
 import helper
-import re
-import os
-import pprint
 import json
 
 def snpSeek(contig, start, end):

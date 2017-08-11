@@ -1,11 +1,6 @@
 #!/usr/bin/env python3
 
-import os
 import sys
-import requests
-import gzip
-import csv
-import pandas as pd
 import helper
 import snpseek as snpSeek
 import rapdb as rapdb
@@ -97,42 +92,6 @@ def main():
     # Return the SnpSeek Call
     elif (db == "12"):
         print(dataSnp)
-
-    # Ecriture fichier geneID (non utilisé pour l'instant)
-    elif (db == "13"):
-        url = "http://rapdb.dna.affrc.go.jp/download/archive/RAP-MSU_2017-04-14.txt.gz"
-        filename = url.split("/")[-1]
-
-        # Give the name of the file without .gz
-        pathToFile = helper.formatPathToFile(filename[:-3])
-
-        if (not os.path.isfile(pathToFile)):
-            # Fetch the file by the url and decompress it
-            r = requests.get(url)
-            decompressedFile = gzip.decompress(r.content)
-            # Create the file .txt
-            with open(pathToFile, "w") as f:
-                f.write(decompressedFile)
-                f.close()
-        newFile = helper.formatPathToFile("geneID.txt")
-        with open(newFile, "a") as f:
-            # Import file tab-delimited
-            try:
-                array = pd.read_csv(pathToFile, sep="\t", header=None)
-            except:
-                array = pd.DataFrame()
-            # Named columns
-            array.columns = ["RAP", "LOC"]
-
-            # Find the line corresponding to the entered RAP ID (Select LOC FROM LOC where RAP = RapID)
-            data = array.loc[array['RAP'] == id]
-            #data.loc[:, 'iricname'] = hashmap['iricname']
-
-            # Store the corresponding LOC ID and split the string
-            print(data['iricname'])
-            data.to_csv(f, sep='\t')
-
-            f.close()
 
     #test all
     else:

@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 
 import helper
-import requests
 from bs4 import BeautifulSoup
-import sys
 
 def oryzabase(RAPID):
 

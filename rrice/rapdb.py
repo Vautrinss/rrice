@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
 
 import helper
-import requests
 from bs4 import BeautifulSoup
-import os
-import sys
 import json
 
 def rapdb(RAPID):

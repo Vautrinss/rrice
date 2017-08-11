@@ -1,0 +1,7 @@
+requests
+bs4
+pandas
+gzip
+os
+json
+sys
